@@ -1,4 +1,4 @@
 package br.com.fiap.communitymanagement.entitie;
 
-public class AluguelEntity {
+public class LocacaoEntity {
 }
