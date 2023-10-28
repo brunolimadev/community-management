@@ -1,4 +1,4 @@
-package br.com.fiap.communitymanagement.entitie;
+package br.com.fiap.communitymanagement.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -18,4 +18,6 @@ public class VagaEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String description;
+    private String numero;
+    private String status;
 }

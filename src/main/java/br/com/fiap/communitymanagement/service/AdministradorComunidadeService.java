@@ -1,6 +1,6 @@
 package br.com.fiap.communitymanagement.service;
 
-import br.com.fiap.communitymanagement.entitie.AdministradorComunidadeEntity;
+import br.com.fiap.communitymanagement.entities.AdministradorComunidadeEntity;
 import br.com.fiap.communitymanagement.repository.AdministradorComunidadeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

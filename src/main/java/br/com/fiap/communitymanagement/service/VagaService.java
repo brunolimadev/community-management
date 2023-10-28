@@ -2,16 +2,14 @@ package br.com.fiap.communitymanagement.service;
 
 import br.com.fiap.communitymanagement.controller.exception.ControllerNotFoundException;
 import br.com.fiap.communitymanagement.dto.VagaDto;
-import br.com.fiap.communitymanagement.entitie.VagaEntity;
+import br.com.fiap.communitymanagement.entities.VagaEntity;
 import br.com.fiap.communitymanagement.repository.VagaRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.UUID;
 
 @Service

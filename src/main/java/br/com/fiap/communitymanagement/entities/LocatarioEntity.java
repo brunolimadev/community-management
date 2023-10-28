@@ -1,4 +1,4 @@
-package br.com.fiap.communitymanagement.entitie;
+package br.com.fiap.communitymanagement.entities;
 
 
 import lombok.*;

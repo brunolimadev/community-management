@@ -1,6 +1,6 @@
 package br.com.fiap.communitymanagement.repository;
 
-import br.com.fiap.communitymanagement.entitie.VagaEntity;
+import br.com.fiap.communitymanagement.entities.VagaEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
