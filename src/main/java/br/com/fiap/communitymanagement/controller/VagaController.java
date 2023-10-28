@@ -27,8 +27,7 @@ public class VagaController {
 
     @GetMapping
     public ResponseEntity<Page<VagaDto>> findAll(
-            @PageableDefault(size = 10, page = 0, sort = "name") Pageable pageable
-    ) {
+            @PageableDefault(size = 10, page = 0, sort = "description") Pageable pageable) {
         Page<VagaDto> vagaDTO = vagaService.findAll(pageable);
         return ResponseEntity.ok(vagaDTO);
     }
