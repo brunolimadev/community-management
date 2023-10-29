@@ -1,6 +1,8 @@
 package br.com.fiap.communitymanagement.controller;
 
+import br.com.fiap.communitymanagement.dto.ComunidadeDto;
 import br.com.fiap.communitymanagement.dto.VagaDto;
+import br.com.fiap.communitymanagement.service.ComunidadeService;
 import br.com.fiap.communitymanagement.service.UsuarioService;
 import br.com.fiap.communitymanagement.service.VagaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +24,23 @@ public class VagaController {
     @Autowired
     private UsuarioService usuarioService;
 
+    @Autowired
+    private ComunidadeService comunidadeService;
+
     @RequestMapping("/vacancy")
     @PostMapping()
     public ResponseEntity<VagaDto> save(@RequestBody VagaDto vaga) {
         usuarioService.mock();
         return ResponseEntity.status(HttpStatusCode.valueOf(201))
                 .body(vagaService.save(vaga));
+    }
+
+    @RequestMapping("/communities")
+    @GetMapping
+    public ResponseEntity<Page<ComunidadeDto>> findAllCommunities(@PageableDefault(size = 10, page = 0, sort = "nome") Pageable pageable) {
+        comunidadeService.mock();
+        Page<ComunidadeDto> comunidadeDtoPage = comunidadeService.findAll(pageable);
+        return ResponseEntity.ok(comunidadeDtoPage);
     }
 
     @GetMapping
