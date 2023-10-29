@@ -1,5 +1,6 @@
 package br.com.fiap.communitymanagement.entities;
 
+import br.com.fiap.communitymanagement.enumerator.TipoUsuarioEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

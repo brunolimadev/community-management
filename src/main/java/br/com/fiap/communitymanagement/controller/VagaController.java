@@ -25,7 +25,7 @@ public class VagaController {
     @RequestMapping("/vacancy")
     @PostMapping()
     public ResponseEntity<VagaDto> save(@RequestBody VagaDto vaga) {
-        usuarioService.save();
+        usuarioService.mock();
         return ResponseEntity.status(HttpStatusCode.valueOf(201))
                 .body(vagaService.save(vaga));
     }
