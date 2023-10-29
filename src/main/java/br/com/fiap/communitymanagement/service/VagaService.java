@@ -51,7 +51,8 @@ public class VagaService {
     }
 
     private VagaDto toVagaDto(VagaEntity vagaEntity) {
-        return new VagaDto(vagaEntity.getTipoVaga(),
+        return new VagaDto(vagaEntity.getId(),
+                vagaEntity.getTipoVaga(),
                 vagaEntity.getDataInicioLocacao().toString(),
                 vagaEntity.getDataFimLocacao().toString(),
                 vagaEntity.getAgenciaRecebimento(),

@@ -1,8 +1,10 @@
 package br.com.fiap.communitymanagement.dto;
 
-import java.time.LocalDateTime;
+
+import java.util.UUID;
 
 public record VagaDto (
+        UUID id,
         String tipoVaga,
         String dataInicioLocacao,
         String dataFimLocacao,

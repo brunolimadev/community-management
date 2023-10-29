@@ -3,7 +3,6 @@ package br.com.fiap.communitymanagement.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
 import java.util.UUID;
 
 

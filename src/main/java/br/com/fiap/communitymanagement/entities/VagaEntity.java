@@ -24,4 +24,5 @@ public class VagaEntity {
     private String agenciaRecebimento;
     private String contaRecebimento;
     private String chavePixRecebimento;
+    private UUID usuarioId;
 }
