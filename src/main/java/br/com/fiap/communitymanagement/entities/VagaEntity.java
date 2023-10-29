@@ -25,4 +25,5 @@ public class VagaEntity {
     private String contaRecebimento;
     private String chavePixRecebimento;
     private UUID usuarioId;
+    private String statusAprovacao;
 }

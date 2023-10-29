@@ -3,6 +3,7 @@ package br.com.fiap.communitymanagement.service;
 import br.com.fiap.communitymanagement.controller.exception.ControllerNotFoundException;
 import br.com.fiap.communitymanagement.dto.VagaDto;
 import br.com.fiap.communitymanagement.entities.VagaEntity;
+import br.com.fiap.communitymanagement.enumerator.StatusAprovacaoEnum;
 import br.com.fiap.communitymanagement.repository.VagaRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,7 +58,8 @@ public class VagaService {
                 vagaEntity.getDataFimLocacao().toString(),
                 vagaEntity.getAgenciaRecebimento(),
                 vagaEntity.getContaRecebimento(),
-                vagaEntity.getChavePixRecebimento());
+                vagaEntity.getChavePixRecebimento(),
+                StatusAprovacaoEnum.PENDENTE.name());
     }
 
     private VagaEntity toVagaEntity(VagaDto vagaDto) {

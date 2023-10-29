@@ -10,5 +10,6 @@ public record VagaDto (
         String dataFimLocacao,
         String agenciaRecebimento,
         String contaRecebimento,
-        String chavePixRecebimento
+        String chavePixRecebimento,
+        String statusAprovacao
 ) {}
