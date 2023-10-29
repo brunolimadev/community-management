@@ -10,6 +10,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 @Service
@@ -35,7 +37,7 @@ public class VagaService {
     public VagaDto update(UUID id, VagaDto vagaDto) {
         try {
             VagaEntity vaga = vagaRepository.getReferenceById(id);
-            vaga.setDescription(vagaDto.description());
+            vaga.setTipoVaga(vagaDto.tipoVaga());
             vaga = vagaRepository.save(vaga);
             return this.toVagaDto(vaga);
         }  catch (EntityNotFoundException e) {
@@ -48,11 +50,23 @@ public class VagaService {
         vagaRepository.deleteById(id);
     }
 
-    private VagaDto toVagaDto(VagaEntity vaga) {
-        return new VagaDto(vaga.getId(), vaga.getDescription());
+    private VagaDto toVagaDto(VagaEntity vagaEntity) {
+        return new VagaDto(vagaEntity.getTipoVaga(),
+                vagaEntity.getDataInicioLocacao().toString(),
+                vagaEntity.getDataFimLocacao().toString(),
+                vagaEntity.getAgenciaRecebimento(),
+                vagaEntity.getContaRecebimento(),
+                vagaEntity.getChavePixRecebimento());
     }
 
-    private VagaEntity toVagaEntity(VagaDto vaga) {
-        return new VagaEntity(vaga.id(), vaga.description());
+    private VagaEntity toVagaEntity(VagaDto vagaDto) {
+        VagaEntity vagaEntity = new VagaEntity();
+        vagaEntity.setTipoVaga(vagaDto.tipoVaga());
+        vagaEntity.setDataInicioLocacao(LocalDate.parse(vagaDto.dataInicioLocacao(), DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+        vagaEntity.setDataFimLocacao(LocalDate.parse(vagaDto.dataFimLocacao(), DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+        vagaEntity.setAgenciaRecebimento(vagaDto.agenciaRecebimento());
+        vagaEntity.setContaRecebimento(vagaDto.contaRecebimento());
+        vagaEntity.setChavePixRecebimento(vagaDto.chavePixRecebimento());
+        return vagaEntity;
     }
 }
