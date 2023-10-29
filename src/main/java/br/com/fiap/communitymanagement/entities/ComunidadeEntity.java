@@ -13,7 +13,6 @@ import java.util.UUID;
 @ToString
 public class ComunidadeEntity {
     private UUID id;
-    private String nomeComunidade;
-    private AdministradorComunidadeEntity administradorComunidadeEntity;
-    private List<MoradorComunidadeEntity> moradorComunidadeEntityList;
+    private String nome;
+    private List<UsuarioEntity> usuarioEntityList;
 }

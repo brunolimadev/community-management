@@ -1,8 +1,7 @@
 package br.com.fiap.communitymanagement.controller;
 
 import br.com.fiap.communitymanagement.dto.VagaDto;
-import br.com.fiap.communitymanagement.repository.AdministradorComunidadeRepository;
-import br.com.fiap.communitymanagement.service.AdministradorComunidadeService;
+import br.com.fiap.communitymanagement.service.UsuarioService;
 import br.com.fiap.communitymanagement.service.VagaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -21,12 +20,12 @@ public class VagaController {
     private VagaService vagaService;
 
     @Autowired
-    private AdministradorComunidadeService administradorComunidadeService;
+    private UsuarioService usuarioService;
 
     @RequestMapping("/vacancy")
     @PostMapping()
     public ResponseEntity<VagaDto> save(@RequestBody VagaDto vaga) {
-        administradorComunidadeService.save();
+        usuarioService.save();
         return ResponseEntity.status(HttpStatusCode.valueOf(201))
                 .body(vagaService.save(vaga));
     }

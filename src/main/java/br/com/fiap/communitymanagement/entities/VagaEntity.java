@@ -18,6 +18,4 @@ public class VagaEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String description;
-    private String numero;
-    private String status;
 }
