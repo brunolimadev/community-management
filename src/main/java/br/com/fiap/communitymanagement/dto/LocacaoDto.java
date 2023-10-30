@@ -4,5 +4,10 @@ import java.util.UUID;
 
 public record LocacaoDto(
         UUID id,
-        UUID vagaId
-) { }
+        UUID vagaId,
+        UUID usuarioId,
+        UUID usuarioLocatarioId,
+        String status,
+        int periodoLocacao
+) {
+}

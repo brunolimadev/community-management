@@ -1,10 +1,10 @@
 package br.com.fiap.communitymanagement.exceptions;
 
-public class PaymentException extends RuntimeException {
+public class ValidacaoException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 
-	public PaymentException(String message) {
+	public ValidacaoException(String message) {
 		super(message);
 	}
 }

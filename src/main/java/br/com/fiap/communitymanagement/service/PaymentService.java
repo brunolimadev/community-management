@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import br.com.fiap.communitymanagement.dto.PaymentRequestDto;
 import br.com.fiap.communitymanagement.dto.PaymentResponseDto;
 import br.com.fiap.communitymanagement.enums.FormaPagamentoEnum;
-import br.com.fiap.communitymanagement.exceptions.PaymentException;
+import br.com.fiap.communitymanagement.exceptions.ValidacaoException;
 import br.com.fiap.communitymanagement.util.CreditCardValidator;
 
 @Service
@@ -27,7 +27,7 @@ public class PaymentService {
 			break;
 
 		default:
-			throw new PaymentException("Forma de pagamento não encontrada!");
+			throw new ValidacaoException("Forma de pagamento não encontrada!");
 		}
 
 		return new PaymentResponseDto("Pagamento aprovado!");

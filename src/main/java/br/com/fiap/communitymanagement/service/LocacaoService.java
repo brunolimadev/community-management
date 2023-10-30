@@ -3,15 +3,22 @@ package br.com.fiap.communitymanagement.service;
 import br.com.fiap.communitymanagement.dto.LocacaoDto;
 import br.com.fiap.communitymanagement.entities.LocacaoEntity;
 import br.com.fiap.communitymanagement.repository.LocacaoRepository;
+import br.com.fiap.communitymanagement.service.validators.locacao.DadosLocacaoValidadores;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class LocacaoService {
     @Autowired
     private LocacaoRepository locacaoRepository;
 
+    @Autowired
+    private List<DadosLocacaoValidadores> validadores;
+
     public LocacaoDto save(LocacaoDto locacaoDto) {
+        this.validadores.forEach(validador -> validador.validar(locacaoDto));
         return toLocacaoDto(locacaoRepository.save(toLocacaoEntity(locacaoDto)));
     }
 
@@ -23,7 +30,14 @@ public class LocacaoService {
     }
 
     private LocacaoDto toLocacaoDto(LocacaoEntity locacaoEntity) {
-        return new LocacaoDto(locacaoEntity.getId(), locacaoEntity.getVagaId());
+        return new LocacaoDto(
+                locacaoEntity.getId(),
+                locacaoEntity.getVagaId(),
+                locacaoEntity.getUsuarioId(),
+                locacaoEntity.getUsuarioLocatarioId(),
+                locacaoEntity.getStatus(),
+                locacaoEntity.getPeriodoLocacao()
+        );
     }
 
 }
