@@ -2,9 +2,8 @@ package br.com.fiap.communitymanagement.service.validators.locacao;
 
 import br.com.fiap.communitymanagement.dto.LocacaoDto;
 import br.com.fiap.communitymanagement.entities.VagaEntity;
-import br.com.fiap.communitymanagement.exceptions.ValidacaoException;
+import br.com.fiap.communitymanagement.controller.exception.ValidacaoException;
 import br.com.fiap.communitymanagement.repository.VagaRepository;
-import br.com.fiap.communitymanagement.service.VagaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

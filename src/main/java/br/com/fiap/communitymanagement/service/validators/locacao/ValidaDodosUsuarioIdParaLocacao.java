@@ -1,7 +1,7 @@
 package br.com.fiap.communitymanagement.service.validators.locacao;
 
 import br.com.fiap.communitymanagement.dto.LocacaoDto;
-import br.com.fiap.communitymanagement.exceptions.ValidacaoException;
+import br.com.fiap.communitymanagement.controller.exception.ValidacaoException;
 import org.springframework.stereotype.Component;
 
 @Component

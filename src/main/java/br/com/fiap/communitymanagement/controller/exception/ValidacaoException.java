@@ -1,4 +1,4 @@
-package br.com.fiap.communitymanagement.exceptions;
+package br.com.fiap.communitymanagement.controller.exception;
 
 public class ValidacaoException extends RuntimeException {
 

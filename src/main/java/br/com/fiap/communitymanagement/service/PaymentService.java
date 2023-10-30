@@ -4,9 +4,9 @@ import org.springframework.stereotype.Service;
 
 import br.com.fiap.communitymanagement.dto.PaymentRequestDto;
 import br.com.fiap.communitymanagement.dto.PaymentResponseDto;
-import br.com.fiap.communitymanagement.enums.FormaPagamentoEnum;
-import br.com.fiap.communitymanagement.exceptions.ValidacaoException;
-import br.com.fiap.communitymanagement.util.CreditCardValidator;
+import br.com.fiap.communitymanagement.enumerator.FormaPagamentoEnum;
+import br.com.fiap.communitymanagement.controller.exception.ValidacaoException;
+import br.com.fiap.communitymanagement.service.validators.pagamento.CreditCardValidator;
 
 @Service
 public class PaymentService {

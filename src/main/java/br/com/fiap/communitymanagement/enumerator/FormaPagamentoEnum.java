@@ -1,4 +1,4 @@
-package br.com.fiap.communitymanagement.enums;
+package br.com.fiap.communitymanagement.enumerator;
 
 public enum FormaPagamentoEnum {
     CARTAO_DE_CREDITO(1),

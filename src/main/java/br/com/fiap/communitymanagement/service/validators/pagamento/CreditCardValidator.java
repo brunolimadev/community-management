@@ -1,8 +1,8 @@
-package br.com.fiap.communitymanagement.util;
+package br.com.fiap.communitymanagement.service.validators.pagamento;
 
 import java.util.Objects;
 
-import br.com.fiap.communitymanagement.exceptions.ValidacaoException;
+import br.com.fiap.communitymanagement.controller.exception.ValidacaoException;
 
 public class CreditCardValidator {
 
