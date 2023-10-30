@@ -13,7 +13,7 @@ import br.com.fiap.communitymanagement.dto.PaymentResponseDto;
 import br.com.fiap.communitymanagement.service.PaymentService;
 
 @RestController
-@RequestMapping("/community-management/gateway-pagamento")
+@RequestMapping("/community-management/payments")
 public class PagamentoController {
 
 	@Autowired
