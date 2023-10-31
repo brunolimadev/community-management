@@ -28,7 +28,7 @@ O projeto **“Gestão de Comunidade”** é uma ferramenta que oferece soluçõ
 
 ### Serviços REST
 
-Veja abaixo o modelo dos payloads ou caso prefira, execute o projeto e acessa o link path abaixo para ver o swagger do projeto:
+Veja abaixo o modelo dos payloads ou caso prefira, execute o projeto e acesse o link abaixo para ver o swagger:
 http://localhost:8080/swagger-ui/index.html
 
 [GET] */communities*
@@ -53,6 +53,7 @@ http://localhost:8080/swagger-ui/index.html
     "agenciaRecebimento": "",
     "contaRecebimento": "",
     "chavePixRecebimento": "",
+    "usuarioId": "",
     "statusAprovacao": "" 
 }
 ```
@@ -109,29 +110,43 @@ No content (204)
 ```
 <hr />
 
-[POST] */approve* - Requisição | Resposta
+[POST] */approve* - Requisição
 
 ```json
 {
-    "id": "",
     "vagaId": "",
-    "usuarioLocatarioId": "",
+    "usuarioId": "",
     "statusAprovacao": ""
 }
 ```
 
-<hr/>
-
-[POST] */rent* - Requisição | Resposta
+[POST] */approve* - Resposta
 
 ```json
 {
     "id": "",
     "vagaId": "",
     "usuarioId": "",
-    "usuarioLocatarioId": "",
-    "status": "",
-    "periodoLocacao": ""
+    "statusAprovacao": ""
+}
+```
+
+<hr/>
+
+[POST] */rent* - Requisição
+
+```json
+{
+    "vagaId": "",
+}
+```
+
+[POST] */rent* - Resposta
+
+```json
+{
+    "id": "",
+    "vagaId": "",
 }
 ```
 
@@ -167,15 +182,8 @@ No content (204)
 }
 ```
 
-
-
-
-
-
-
-
-
-
+## 😎 Collection para testes 
+[fiap-community-manager.postman_collection.json](https://github.com/brunolimadev/community-management/files/13210986/fiap-community-manager.postman_collection.json)
 
 
 
