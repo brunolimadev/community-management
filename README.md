@@ -183,7 +183,7 @@ No content (204)
 ```
 
 ## 😎 Collection para testes 
-[fiap-community-manager.postman_collection.json](https://github.com/brunolimadev/community-management/files/13210954/fiap-community-manager.postman_collection.json)
+[fiap-community-manager.postman_collection.json](https://github.com/brunolimadev/community-management/files/13210986/fiap-community-manager.postman_collection.json)
 
 
 
