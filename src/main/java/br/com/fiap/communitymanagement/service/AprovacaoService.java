@@ -19,6 +19,7 @@ public class AprovacaoService {
         AprovacaoEntity aprovacaoEntity = new AprovacaoEntity();
         aprovacaoEntity.setVagaId(aprovacaoDto.vagaId());
         aprovacaoEntity.setUsuarioLocatarioId(aprovacaoDto.usuarioLocatarioId());
+        aprovacaoEntity.setUsuarioId(aprovacaoDto.usuarioId());
         aprovacaoEntity.setStatusAprovacao(aprovacaoDto.statusAprovacao());
 
         return aprovacaoEntity;
@@ -29,6 +30,7 @@ public class AprovacaoService {
                 aprovacaoEntity.getId(),
                 aprovacaoEntity.getVagaId(),
                 aprovacaoEntity.getUsuarioLocatarioId(),
+                aprovacaoEntity.getUsuarioId(),
                 aprovacaoEntity.getStatusAprovacao()
         );
     }

@@ -6,5 +6,6 @@ public record AprovacaoDto(
         UUID id,
         UUID vagaId,
         UUID usuarioLocatarioId,
+        UUID usuarioId,
         String statusAprovacao
 ) { }
