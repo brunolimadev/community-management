@@ -1,9 +1,12 @@
 package br.com.fiap.communitymanagement.service;
 
+import br.com.fiap.communitymanagement.controller.exception.ControllerNotFoundException;
 import br.com.fiap.communitymanagement.dto.AprovacaoDto;
-import br.com.fiap.communitymanagement.dto.VagaDto;
 import br.com.fiap.communitymanagement.entities.AprovacaoEntity;
+import br.com.fiap.communitymanagement.entities.VagaEntity;
 import br.com.fiap.communitymanagement.repository.AprovacaoRepository;
+import br.com.fiap.communitymanagement.repository.VagaRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,21 +16,16 @@ public class AprovacaoService {
     private AprovacaoRepository aprovacaoRepository;
 
     @Autowired
-    private VagaService vagaService;
+    private VagaRepository vagaRepository;
 
     public AprovacaoDto save(AprovacaoDto aprovacaoDto) {
-        VagaDto vagaDto = vagaService.findById(aprovacaoDto.vagaId());
-        vagaService.update(aprovacaoDto.vagaId(), new VagaDto(
-                vagaDto.id(),
-                vagaDto.tipoVaga(),
-                vagaDto.dataInicioLocacao(),
-                vagaDto.dataFimLocacao(),
-                vagaDto.agenciaRecebimento(),
-                vagaDto.contaRecebimento(),
-                vagaDto.chavePixRecebimento(),
-                vagaDto.usuarioId(),
-                aprovacaoDto.statusAprovacao()
-        ));
+        try {
+            VagaEntity vaga = vagaRepository.getReferenceById(aprovacaoDto.vagaId());
+            vaga.setStatusAprovacao(aprovacaoDto.statusAprovacao());
+            vagaRepository.save(vaga);
+        }  catch (EntityNotFoundException e) {
+            throw new ControllerNotFoundException("Vaga não encontrada");
+        }
         return toAprovacaoDto(aprovacaoRepository.save(toAprovacaoEntity(aprovacaoDto)));
     }
 

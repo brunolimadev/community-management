@@ -21,18 +21,18 @@ public class VagaService {
     private VagaRepository vagaRepository;
 
     public VagaDto save(VagaDto vaga) {
-        return toVagaDto(vagaRepository.save(toVagaEntity(vaga)));
+        return toVagaDtoInsert(vagaRepository.save(toVagaEntity(vaga)));
     }
 
     public Page<VagaDto>  findAll(Pageable pageable) {
         Page<VagaEntity> vagas = vagaRepository.findAll(pageable);
-        return vagas.map(this::toVagaDto);
+        return vagas.map(this::toVagaDtoConsult);
     }
 
     public VagaDto findById(UUID id) {
         VagaEntity vaga = vagaRepository.findById(id)
                 .orElseThrow(() -> new ControllerNotFoundException("Vaga não encontrada"));
-        return this.toVagaDto(vaga);
+        return this.toVagaDtoConsult(vaga);
     }
 
     public VagaDto update(UUID id, VagaDto vagaDto) {
@@ -40,7 +40,7 @@ public class VagaService {
             VagaEntity vaga = vagaRepository.getReferenceById(id);
             vaga.setTipoVaga(vagaDto.tipoVaga());
             vaga = vagaRepository.save(vaga);
-            return this.toVagaDto(vaga);
+            return this.toVagaDtoInsert(vaga);
         }  catch (EntityNotFoundException e) {
             throw new ControllerNotFoundException("Vaga não encontrada");
         }
@@ -51,7 +51,7 @@ public class VagaService {
         vagaRepository.deleteById(id);
     }
 
-    private VagaDto toVagaDto(VagaEntity vagaEntity) {
+    private VagaDto toVagaDtoInsert(VagaEntity vagaEntity) {
         return new VagaDto(vagaEntity.getId(),
                 vagaEntity.getTipoVaga(),
                 vagaEntity.getDataInicioLocacao().toString(),
@@ -61,6 +61,18 @@ public class VagaService {
                 vagaEntity.getChavePixRecebimento(),
                 vagaEntity.getUsuarioId(),
                 StatusAprovacaoEnum.PENDENTE.name());
+    }
+
+    private VagaDto toVagaDtoConsult(VagaEntity vagaEntity) {
+        return new VagaDto(vagaEntity.getId(),
+                vagaEntity.getTipoVaga(),
+                vagaEntity.getDataInicioLocacao().toString(),
+                vagaEntity.getDataFimLocacao().toString(),
+                vagaEntity.getAgenciaRecebimento(),
+                vagaEntity.getContaRecebimento(),
+                vagaEntity.getChavePixRecebimento(),
+                vagaEntity.getUsuarioId(),
+                vagaEntity.getStatusAprovacao());
     }
 
     private VagaEntity toVagaEntity(VagaDto vagaDto) {

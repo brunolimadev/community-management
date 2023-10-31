@@ -3,6 +3,7 @@ package br.com.fiap.communitymanagement.service.validators.locacao;
 import br.com.fiap.communitymanagement.dto.LocacaoDto;
 import br.com.fiap.communitymanagement.entities.VagaEntity;
 import br.com.fiap.communitymanagement.controller.exception.ValidacaoException;
+import br.com.fiap.communitymanagement.enumerator.StatusAprovacaoEnum;
 import br.com.fiap.communitymanagement.repository.VagaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -28,7 +29,7 @@ public class ValidaDodosVagaParaLocacao implements DadosLocacaoValidadores {
             throw new ValidacaoException("Vaga não encontrada!");
         }
 
-        if (!vaga.get().getStatusAprovacao().equals(vaga.get().getStatusAprovacao())) {
+        if (!vaga.get().getStatusAprovacao().equals(StatusAprovacaoEnum.APROVADO.name())) {
             throw new ValidacaoException("A vaga não esta aprovada para locação!");
         }
         
