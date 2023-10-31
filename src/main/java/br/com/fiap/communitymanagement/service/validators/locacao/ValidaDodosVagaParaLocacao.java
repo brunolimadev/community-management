@@ -28,7 +28,7 @@ public class ValidaDodosVagaParaLocacao implements DadosLocacaoValidadores {
             throw new ValidacaoException("Vaga não encontrada!");
         }
 
-        if (!vaga.get().getStatusAprovacao().equals("APROVADA")) {
+        if (!vaga.get().getStatusAprovacao().equals(vaga.get().getStatusAprovacao())) {
             throw new ValidacaoException("A vaga não esta aprovada para locação!");
         }
         

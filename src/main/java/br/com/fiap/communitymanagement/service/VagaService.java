@@ -59,6 +59,7 @@ public class VagaService {
                 vagaEntity.getAgenciaRecebimento(),
                 vagaEntity.getContaRecebimento(),
                 vagaEntity.getChavePixRecebimento(),
+                vagaEntity.getUsuarioId(),
                 StatusAprovacaoEnum.PENDENTE.name());
     }
 
@@ -70,6 +71,8 @@ public class VagaService {
         vagaEntity.setAgenciaRecebimento(vagaDto.agenciaRecebimento());
         vagaEntity.setContaRecebimento(vagaDto.contaRecebimento());
         vagaEntity.setChavePixRecebimento(vagaDto.chavePixRecebimento());
+        vagaEntity.setUsuarioId(vagaDto.usuarioId());
+        vagaEntity.setStatusAprovacao( StatusAprovacaoEnum.PENDENTE.name());
         return vagaEntity;
     }
 }

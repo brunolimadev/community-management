@@ -32,11 +32,7 @@ public class LocacaoService {
     private LocacaoDto toLocacaoDto(LocacaoEntity locacaoEntity) {
         return new LocacaoDto(
                 locacaoEntity.getId(),
-                locacaoEntity.getVagaId(),
-                locacaoEntity.getUsuarioId(),
-                locacaoEntity.getUsuarioLocatarioId(),
-                locacaoEntity.getStatus(),
-                locacaoEntity.getPeriodoLocacao()
+                locacaoEntity.getVagaId()
         );
     }
 

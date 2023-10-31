@@ -19,8 +19,4 @@ public class LocacaoEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private UUID vagaId;
-    private UUID usuarioId;
-    private UUID usuarioLocatarioId;
-    private String status;
-    private int periodoLocacao;
 }

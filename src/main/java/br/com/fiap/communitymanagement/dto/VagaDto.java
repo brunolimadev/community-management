@@ -11,5 +11,6 @@ public record VagaDto (
         String agenciaRecebimento,
         String contaRecebimento,
         String chavePixRecebimento,
+        UUID usuarioId,
         String statusAprovacao
 ) {}
