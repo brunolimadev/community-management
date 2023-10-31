@@ -53,6 +53,7 @@ http://localhost:8080/swagger-ui/index.html
     "agenciaRecebimento": "",
     "contaRecebimento": "",
     "chavePixRecebimento": "",
+    "usuarioId": "",
     "statusAprovacao": "" 
 }
 ```
@@ -109,29 +110,43 @@ No content (204)
 ```
 <hr />
 
-[POST] */approve* - Requisição | Resposta
+[POST] */approve* - Requisição
 
 ```json
 {
-    "id": "",
     "vagaId": "",
-    "usuarioLocatarioId": "",
+    "usuarioId": "",
     "statusAprovacao": ""
 }
 ```
 
-<hr/>
-
-[POST] */rent* - Requisição | Resposta
+[POST] */approve* - Resposta
 
 ```json
 {
     "id": "",
     "vagaId": "",
     "usuarioId": "",
-    "usuarioLocatarioId": "",
-    "status": "",
-    "periodoLocacao": ""
+    "statusAprovacao": ""
+}
+```
+
+<hr/>
+
+[POST] */rent* - Requisição
+
+```json
+{
+    "vagaId": "",
+}
+```
+
+[POST] */rent* - Resposta
+
+```json
+{
+    "id": "",
+    "vagaId": "",
 }
 ```
 
