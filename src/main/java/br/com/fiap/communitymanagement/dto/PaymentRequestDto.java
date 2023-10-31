@@ -1,7 +1,7 @@
 package br.com.fiap.communitymanagement.dto;
 
 public record PaymentRequestDto(
-		FormOfPaymentDto formaPagamento,
+		int formaPagamento,
 		Double valorCompra,
 		String numeroCartao,
 		String dataValidade,

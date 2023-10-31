@@ -12,9 +12,7 @@ import br.com.fiap.communitymanagement.service.validators.pagamento.CreditCardVa
 public class PagamentoService {
 
 	public PaymentResponseDto process(PaymentRequestDto dto) {
-
-		Integer idTransacao = dto.formaPagamento().codigo();
-		FormaPagamentoEnum formaPagamento = FormaPagamentoEnum.getByCodigo(idTransacao);
+		FormaPagamentoEnum formaPagamento = FormaPagamentoEnum.getByCodigo(dto.formaPagamento());
 
 		switch (formaPagamento) {
 

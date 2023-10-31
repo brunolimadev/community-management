@@ -39,6 +39,11 @@ public class VagaService {
         try {
             VagaEntity vaga = vagaRepository.getReferenceById(id);
             vaga.setTipoVaga(vagaDto.tipoVaga());
+            vaga.setDataInicioLocacao(LocalDate.parse(vagaDto.dataInicioLocacao()));
+            vaga.setDataFimLocacao(LocalDate.parse(vagaDto.dataFimLocacao()));
+            vaga.setAgenciaRecebimento(vagaDto.agenciaRecebimento());
+            vaga.setContaRecebimento(vagaDto.contaRecebimento());
+            vaga.setChavePixRecebimento(vagaDto.chavePixRecebimento());
             vaga = vagaRepository.save(vaga);
             return this.toVagaDtoInsert(vaga);
         }  catch (EntityNotFoundException e) {
