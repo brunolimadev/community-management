@@ -9,7 +9,7 @@ import br.com.fiap.communitymanagement.controller.exception.ValidacaoException;
 import br.com.fiap.communitymanagement.service.validators.pagamento.CreditCardValidator;
 
 @Service
-public class PaymentService {
+public class PagamentoService {
 
 	public PaymentResponseDto process(PaymentRequestDto dto) {
 
