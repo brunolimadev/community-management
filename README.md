@@ -28,7 +28,7 @@ O projeto **“Gestão de Comunidade”** é uma ferramenta que oferece soluçõ
 
 ### Serviços REST
 
-Veja abaixo o modelo dos payloads ou caso prefira, execute o projeto e acessa o link path abaixo para ver o swagger do projeto:
+Veja abaixo o modelo dos payloads ou caso prefira, execute o projeto e acesse o link abaixo para ver o swagger:
 http://localhost:8080/swagger-ui/index.html
 
 [GET] */communities*
