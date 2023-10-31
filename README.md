@@ -23,10 +23,14 @@ O projeto **“Gestão de Comunidade”** é uma ferramenta que oferece soluçõ
    2. /vacancy
    3. /rent
    4. /user
-   5. /aprove
+   5. /approve
 
 
 ### Serviços REST
+
+Veja abaixo o modelo dos payloads ou caso prefira, execute o projeto e acessa o link path abaixo para ver o swagger do projeto:
+http://localhost:8080/swagger-ui/index.html
+
 [GET] */communities*
 
 ```json
@@ -162,6 +166,7 @@ No content (204)
     "comunidadeId": "",
 }
 ```
+
 
 
 
