@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/community-management/aprove")
+@RequestMapping("/community-management/approve")
 public class AprovacaoController {
     @Autowired
     private AprovacaoService aprovacaoService;
 
-    @PostMapping("{vagaId}")
-    public ResponseEntity<AprovacaoDto> save(@RequestBody AprovacaoDto aprovacaoDto, @PathVariable UUID vagaId) {
+    @PostMapping()
+    public ResponseEntity<AprovacaoDto> save(@RequestBody AprovacaoDto aprovacaoDto) {
         return ResponseEntity.status(201).body(aprovacaoService.save(aprovacaoDto));
     }
 }

@@ -17,6 +17,8 @@ public class AprovacaoService {
 
     private AprovacaoEntity toAprovacaoEntity(AprovacaoDto aprovacaoDto) {
         AprovacaoEntity aprovacaoEntity = new AprovacaoEntity();
+        aprovacaoEntity.setVagaId(aprovacaoDto.vagaId());
+        aprovacaoEntity.setUsuarioLocatarioId(aprovacaoDto.usuarioLocatarioId());
         aprovacaoEntity.setStatusAprovacao(aprovacaoDto.statusAprovacao());
 
         return aprovacaoEntity;
@@ -25,6 +27,8 @@ public class AprovacaoService {
     private AprovacaoDto toAprovacaoDto(AprovacaoEntity aprovacaoEntity) {
         return new AprovacaoDto(
                 aprovacaoEntity.getId(),
+                aprovacaoEntity.getVagaId(),
+                aprovacaoEntity.getUsuarioLocatarioId(),
                 aprovacaoEntity.getStatusAprovacao()
         );
     }

@@ -19,5 +19,7 @@ public class AprovacaoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    private UUID vagaId;
+    private UUID usuarioLocatarioId;
     private String statusAprovacao;
 }
