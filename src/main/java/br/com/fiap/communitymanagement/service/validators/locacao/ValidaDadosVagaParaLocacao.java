@@ -40,20 +40,6 @@ public class ValidaDadosVagaParaLocacao implements DadosLocacaoValidadores {
             throw new ValidacaoException("A vaga não esta aprovada para locação!");
         }
 
-//        if (!pagamentoService.processar(
-//        		new DadosPagamentoDto(
-//        		FormaPagamentoEnum.PIX.getCodigo(),
-//                null,
-//                null,
-//                null,
-//                null,
-//                vaga.get().getChavePixRecebimento(),
-//                null,
-//                null)
-//        		)) {
-//            throw new ValidacaoException("Ocorreu um erro ao tentar efetuar o pagamento para locação");
-//        }
-        
         if (!pagamentoService.processar(
         		new DadosPagamentoDto(
         		FormaPagamentoEnum.DEPOSITO_BANCARIO.getCodigo(),
