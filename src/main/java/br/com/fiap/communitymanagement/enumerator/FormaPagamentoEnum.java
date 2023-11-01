@@ -3,7 +3,8 @@ package br.com.fiap.communitymanagement.enumerator;
 public enum FormaPagamentoEnum {
     CARTAO_DE_CREDITO(1),
     PIX(2),
-    NOT_FOUND(3);
+    DEPOSITO_BANCARIO(3),
+    NOT_FOUND(4);
 
     private final int codigo;
 

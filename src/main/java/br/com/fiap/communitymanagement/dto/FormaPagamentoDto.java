@@ -1,5 +1,5 @@
 package br.com.fiap.communitymanagement.dto;
 
-public record FormOfPaymentDto(
+public record FormaPagamentoDto(
     Integer codigo) 
     {}
